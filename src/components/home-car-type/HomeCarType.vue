@@ -6,9 +6,13 @@
           <h3>精选车型</h3>
         </div>
         <div class="car-list-wrap">
-            <CarTypeItemSmall v-for="item of data" :key="item.id" :data="item"/>
-          
-        
+          <div class="floor-label">爆款车型</div>
+          <CarTypeItemSmall
+            v-for="item of data"
+            :key="item.id"
+            :data="item"
+          />
+
           <!-- <div
             v-for="(item) of data"
             :key="item.id"
@@ -23,7 +27,7 @@
             <div class="car-city"><i></i>{{item.carCity}}</div>
             <div class="car-price"><i>￥</i><span class="num">{{item.carPrice}}</span><span class="unit">/天起</span></div>
           </div> -->
-        
+
         </div>
       </div>
     </div>
@@ -73,9 +77,24 @@ export default {
         border-top: 1px solid #e2e8ec;
         display: flex;
         flex-wrap: wrap;
+        position: relative;
         // box-sizing: border-box;
 
-      
+        .floor-label {
+          width: 133px;
+          height: 40px;
+          font-size: 18px;
+          color: #fff;
+          text-align: center;
+          background: url(https://hzccdnpc-prod.oss-cn-hangzhou.aliyuncs.com/Content/Images/floor-price-181017.png)
+            no-repeat;
+          background-size: 100% 100%;
+          position: absolute;
+          top: 0;
+          left: -11px;
+          padding-top: 2px;
+          z-index: 999;
+        }
       }
     }
   }

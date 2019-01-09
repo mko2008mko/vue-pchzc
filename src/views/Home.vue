@@ -7,7 +7,9 @@
       @carsouleClick="handleCarsouleClick"
     />
     <HomeCoupon />
-    <HomeCarType :data="RecommendcarType"/>
+    <HomeCarType :data="RecommendcarType" />
+    <HomeFeatureService :data="fsList" />
+    <HomeVendorWall :data="vendorList"/>
   </div>
 </template>
 
@@ -18,6 +20,8 @@ import HomeFixFooter from "../components/home-fix-footer/HomeFixFooter";
 import HomeCarousel from "../components/home-carousel/HoemCarousel";
 import HomeCoupon from "../components/home-coupon/HomeCoupon";
 import HomeCarType from "../components/home-car-type/HomeCarType";
+import HomeFeatureService from "../components/home-feature-service/HomeFeatureService";
+import HomeVendorWall from "../components/home-vendor-wall/HomeVendorWall";
 
 export default {
   name: "home",
@@ -26,7 +30,9 @@ export default {
     HomeFixFooter,
     HomeCarousel,
     HomeCoupon,
-    HomeCarType
+    HomeCarType,
+    HomeFeatureService,
+    HomeVendorWall
   },
   data() {
     return {
@@ -113,6 +119,117 @@ export default {
           carLabel: [],
           carCity: "墨尔本",
           carPrice: 230
+        }
+      ],
+      fsList: [
+        {
+          id: 1,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/idl/idl-small-yl3.png",
+          adImgUrl:
+            "https://cdn-aliyun-pccss.huizuche.com/Content/Images/index/indexnew/idl-big.png",
+          title: "驾照服务",
+          desc: "",
+          isDrive: true,
+          label: "银联支付一元包邮",
+          driveData: [
+            {
+              subTitle: "驾照全球通",
+              subDesc: "国际驾照翻译认证件"
+            },
+            {
+              subTitle: "驾照翻译件",
+              subDesc: "多种免费认证翻译服务"
+            }
+          ]
+        },
+        {
+          id: 2,
+          imgUrl:
+            "https://www.huizuche.com/Content/Images/index/indexnew/fsImg-02.png",
+          adImgUrl:
+            "https://www.huizuche.com/Content/Images/index/indexnew/fsInfoImg-02.png",
+          title: "华人取车向导",
+          desc: "一站式取车服务",
+          isDrive: false
+        },
+        {
+          id: 3,
+          imgUrl:
+            "https://www.huizuche.com/Content/Images/index/indexnew/fsImg-03.png",
+          adImgUrl:
+            "https://www.huizuche.com/Content/Images/index/indexnew/fsInfoImg-03.png",
+          title: "贴心租",
+          desc: "当地中文租车",
+          isDrive: false
+        },
+        {
+          id: 4,
+          imgUrl:
+            "https://www.huizuche.com/Content/Images/index/indexnew/fsImg-04.png",
+          adImgUrl:
+            "https://www.huizuche.com/Content/Images/index/indexnew/fsInfoImg-04-new.png",
+          title: "国人定制保险",
+          desc: "1对1专人理赔",
+          isDrive: false
+        }
+      ],
+      vendorList: [
+        {
+          id: 1,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/hertz2.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/hertz2_hover.png"
+        },
+        {
+          id: 2,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/avis.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/avis_hover.png"
+        },
+        {
+          id: 3,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/alamo.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/alamo_hover.png"
+        },
+        {
+          id: 4,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/sixt.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/sixt_hover.png"
+        },
+        {
+          id: 5,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/enterprise2.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/enterprise2_hover.png"
+        },
+        {
+          id: 6,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/europcar.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/europcar_hover.png"
+        },
+        {
+          id: 7,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/budget.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/budget_hover.png"
+        },
+        {
+          id: 8,
+          imgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/thrifty.png",
+          hoverImgUrl:
+            "https://cdn-aliyun-hzccontent.huizuche.com/huizuche/1.44/thrifty_hover.png"
         }
       ]
     };

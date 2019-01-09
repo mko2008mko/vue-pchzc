@@ -2,7 +2,10 @@
   <div
     v-if="!data.carLabel.length"
     class="car-s-item"
+    @mouseenter="popIsShow=true"
+    @mouseleave="popIsShow=false"
   >
+    <DetailPopup v-if="popIsShow" linkUrl="https://www.baidu.com/"/>
     <img
       :src="data.imgUrl"
       alt=""
@@ -14,7 +17,10 @@
   <div
     v-else-if="data.carLabel.length"
     class="car-l-item"
+    @mouseenter="popIsShow=true"
+    @mouseleave="popIsShow=false"
   >
+    <DetailPopup v-if="popIsShow" linkUrl="https://www.baidu.com/"/>
     <img
       :src="data.imgUrl"
       alt=""
@@ -32,8 +38,18 @@
 </template>
 
 <script>
+import DetailPopup from "./DetailPopup";
+
 export default {
   name: "CarTypeItemSmall",
+  components: {
+    DetailPopup
+  },
+  data() {
+    return {
+      popIsShow: false
+    };
+  },
   props: {
     data: Object
   }
