@@ -11,6 +11,7 @@
     <HomeFeatureService :data="fsList" />
     <HomeVendorWall :data="vendorList" />
     <HomeUserShare :data="userShareList" />
+    <HomeSuspend />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import HomeCarType from "../components/home-car-type/HomeCarType";
 import HomeFeatureService from "../components/home-feature-service/HomeFeatureService";
 import HomeVendorWall from "../components/home-vendor-wall/HomeVendorWall";
 import HomeUserShare from "../components/home-user-share/HomeUserShare";
+import HomeSuspend from "../components/home-suspend/HomeSuspend";
 
 export default {
   name: "home",
@@ -35,7 +37,8 @@ export default {
     HomeCarType,
     HomeFeatureService,
     HomeVendorWall,
-    HomeUserShare
+    HomeUserShare,
+    HomeSuspend
   },
   data() {
     return {
@@ -345,7 +348,7 @@ export default {
           city: "墨尔本",
           carType: "轿车",
           time: "2018.10.12"
-        },
+        }
       ]
     };
   },
