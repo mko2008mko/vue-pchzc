@@ -97,7 +97,7 @@ export default {
     }
   },
   created() {
-    console.log(Math.ceil(this.data.length / 3));
+    // console.log(Math.ceil(this.data.length / 3));
     this.ulStyle.width = Math.ceil(this.data.length / 3) * 1224 + "px";
   }
 };
