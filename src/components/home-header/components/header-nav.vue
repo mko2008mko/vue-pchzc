@@ -8,16 +8,18 @@
         :class="{selected:index===currIndex}"
         @click="navHandleClick(item,index)"
       >
-        <a href="#"> {{item.title}}
-          <i
-            v-if="item.sub.length"
-            class="new-index-icon nav-down"
-          ></i>
-          <small
-            v-if="item.isRecommend"
-            class="new-index-icon nav-recommend"
-          >荐</small>
-        </a>
+        <router-link :to="item.linkUrl">
+          <span class="ss"> {{item.title}}
+            <i
+              v-if="item.sub.length"
+              class="new-index-icon nav-down"
+            ></i>
+            <small
+              v-if="item.isRecommend"
+              class="new-index-icon nav-recommend"
+            >荐</small>
+          </span>
+        </router-link>
         <i
           v-if="item.sub.length"
           class="new-index-icon lt-line"
@@ -126,14 +128,14 @@ export default {
           title: "自驾攻略",
           sub: [],
           isRecommend: true,
-          linkUrl: ""
+          linkUrl: "/DriveStrategy"
         },
         {
           id: 6,
           title: "特价专区",
           sub: [],
           isRecommend: false,
-          linkUrl: ""
+          linkUrl: "/huodong"
         }
       ]
     };
@@ -168,7 +170,7 @@ nav {
       cursor: pointer;
       box-sizing: border-box;
 
-      a {
+      .ss {
         width: 100%;
         height: 100%;
         display: inline-block;
